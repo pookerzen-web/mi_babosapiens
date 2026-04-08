@@ -46,6 +46,12 @@ body, html {
     visibility: visible;
 }
 
+#message-screen {
+    justify-content: flex-start;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
 /* Landing Screen */
 #landing-screen {
     background: radial-gradient(circle at center, var(--bg-pink) 0%, var(--rose-soft) 100%);

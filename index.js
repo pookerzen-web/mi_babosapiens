@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const candles = document.querySelectorAll('.candle');
     const canvas = document.getElementById('confetti-canvas');
     const ctx = canvas.getContext('2d');
+    const bgMusic = document.getElementById('bg-music');
 
     // 1. Particle Systems
     let rainParticles = [];
@@ -97,6 +98,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Interaction
     giftBox.addEventListener('click', () => {
         giftBox.classList.add('gift-open');
+        
+        // Empezar la canción si es posible
+        bgMusic.play().catch(e => console.log("Audio playback requires user interaction:", e));
         
         setTimeout(() => {
             isLanding = false;
