@@ -1,0 +1,282 @@
+:root {
+    --bg-pink: #fff0f3;
+    --rose-soft: #ffccd5;
+    --rose-deep: #ff8fa3;
+    --gold: #d4af37;
+    --white: #ffffff;
+    --text-dark: #4a4e69;
+    --font-serif: "PT Serif", serif;
+    --font-script: "Great Vibes", cursive;
+    --font-neon: "Pacifico", cursive;
+    --font-main: "Montserrat", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    font-family: var(--font-main);
+    background-color: var(--bg-pink);
+    transition: background-color 1.5s ease;
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.screen.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Landing Screen */
+#landing-screen {
+    background: radial-gradient(circle at center, var(--bg-pink) 0%, var(--rose-soft) 100%);
+    color: var(--text-dark);
+}
+
+.animated-name {
+    font-family: var(--font-neon);
+    font-size: 3.5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.letter {
+    display: inline-block;
+    opacity: 0;
+    transform: scale(0.5) translateY(20px);
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    color: var(--rose-deep);
+    text-shadow: 2px 2px 0px rgba(255,255,255,0.8);
+}
+
+.letter.reveal {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--text-dark);
+    opacity: 0.8;
+    margin-bottom: 60px;
+}
+
+/* Gift Box */
+.gift-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+.gift-box-body {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80%;
+    background: var(--rose-deep);
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.gift-lid {
+    position: absolute;
+    top: 10%;
+    left: -5%;
+    width: 110%;
+    height: 25%;
+    background: var(--rose-soft);
+    border: 2px solid var(--rose-deep);
+    border-radius: 5px;
+    z-index: 5;
+    transition: transform 0.6s ease;
+}
+
+.gift-ribbon {
+    position: absolute;
+    top: 0;
+    left: 45%;
+    width: 10%;
+    height: 100%;
+    background: var(--white);
+    z-index: 4;
+}
+
+.click-me {
+    position: absolute;
+    top: -30px;
+    right: -40px;
+    width: 75px;
+    height: 75px;
+    background: var(--text-dark);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(15deg);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    animation: float 2s infinite ease-in-out;
+}
+
+.click-me span {
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+@keyframes float {
+    0%, 100% { transform: rotate(15deg) translateY(0); }
+    50% { transform: rotate(15deg) translateY(-10px); }
+}
+
+/* Cake */
+.cake-assembly-zone {
+    width: 180px;
+    height: 180px;
+    margin: 30px auto;
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.cake-layer {
+    background: #ffd1dc;
+    width: 100%;
+    border-radius: 10px 10px 5px 5px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.cake-layer.bottom { height: 40px; width: 140px; background: #ffb7c5; z-index: 1; }
+.cake-layer.middle { height: 35px; width: 110px; background: #ffc0cb; z-index: 2; margin-bottom: -5px; }
+.cake-layer.top { height: 30px; width: 80px; background: #ffd1dc; z-index: 3; margin-bottom: -5px; }
+
+.cake-frosting {
+    width: 150px;
+    height: 12px;
+    background: white;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 35px;
+    z-index: 4;
+    opacity: 0;
+    transition: opacity 1s ease 1.5s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.cake-layer.assembled { opacity: 1; transform: translateY(0); }
+
+.candle {
+    width: 6px;
+    height: 25px;
+    background: var(--rose-deep);
+    position: absolute;
+    bottom: 95px;
+    opacity: 0;
+    transition: all 0.5s ease 2s;
+}
+
+.candle-1 { left: 70px; }
+.candle-2 { right: 70px; }
+
+.flame {
+    width: 10px;
+    height: 15px;
+    background: #ffab00;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    position: absolute;
+    top: -18px;
+    left: -2px;
+    animation: flicker 0.1s infinite alternate;
+}
+
+@keyframes flicker {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+
+/* Letter */
+.letter-container {
+    max-width: 600px;
+    width: 90%;
+    margin: 80px auto 50px; /* Added more top margin for nav bar */
+    padding: 50px 30px;
+    background: white;
+    box-shadow: 0 15px 35px rgba(255,143,163,0.1);
+    border-radius: 15px;
+    border: 1px solid var(--rose-soft);
+}
+
+.letter-header, .letter-footer {
+    text-align: center;
+}
+
+.script-title { font-family: var(--font-script); font-size: 3.5rem; color: var(--bg-dark); }
+.letter-body { 
+    font-family: var(--font-serif); 
+    line-height: 1.8; 
+    font-size: 1.2rem; 
+    text-align: justify; /* Justified text looks much neater for a long letter */
+}
+
+.letter-body p {
+    margin-bottom: 20px;
+}
+
+.top-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background: var(--text-dark);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+/* Particles Canvas */
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 99;
+}
+
+@media (max-width: 768px) {
+    .animated-name { font-size: 2.5rem; }
+}
+
+.gift-open .gift-lid { transform: translateY(-100px) rotate(-15deg); opacity: 0; }

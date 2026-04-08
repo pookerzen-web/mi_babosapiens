@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi Niña Hermosa | Camila</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;700&family=Pacifico&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="landing-screen" class="screen active">
+        <div class="content hero">
+            <h1 class="animated-name" id="name-container">
+                <!-- Letters will be injected by JS for better control -->
+            </h1>
+            <p class="subtitle">Toca el regalo para descubrir una sorpresa...</p>
+
+            <div class="gift-container" id="gift-box">
+                <div class="gift-lid"></div>
+                <div class="gift-box-body"></div>
+                <div class="gift-ribbon"></div>
+                <div class="click-me">
+                    <span>¡Haz Clic!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="message-screen" class="screen">
+        <nav class="top-nav">
+            <div class="nav-logo">
+                <span class="cake-logo-icon">✨</span>
+                <span class="brand-text">Para mi vida</span>
+            </div>
+        </nav>
+
+        <main class="letter-container">
+            <div class="cake-assembly-zone" id="cake-container">
+                <!-- Cake layers and candles will go here -->
+                <div class="cake-layer bottom"></div>
+                <div class="cake-layer middle"></div>
+                <div class="cake-layer top"></div>
+                <div class="cake-frosting"></div>
+                <div class="candle candle-1">
+                    <div class="flame"></div>
+                </div>
+                <div class="candle candle-2">
+                    <div class="flame"></div>
+                </div>
+            </div>
+
+            <header class="letter-header">
+                <h2 class="script-title">¡Feliz Cumpleaños!</h2>
+                <h3 class="highlight-name">Mi Niña Hermosa</h3>
+            </header>
+
+            <section class="letter-body">
+                <p>Mi amor,</p>
+                <p>Hoy es un día tan especial como tú, y no podía dejar pasar la oportunidad de recordarte lo increíble
+                    que eres y lo agradecido que estoy por tenerte en mi vida. Feliz cumpleaños, mi
+                    <strong>babosapiens</strong> hermosa, mi niña preciosa, mi vida entera. 💖</p>
+
+                <p>Desde que llegaste a mi mundo, todo cambió para bien. Eres esa luz que ilumina mis días incluso
+                    cuando todo parece gris, eres la razón de tantas sonrisas sinceras y el motivo por el cual mi
+                    corazón late con más fuerza. No hay palabras suficientes para describir lo importante que eres para
+                    mí, pero quiero que hoy sientas, aunque sea un poquito, todo el amor que guardo por ti.</p>
+
+                <p>Amo cada detalle de ti: tu forma de ser, tu risa, tu dulzura, tu manera de hacer que todo tenga
+                    sentido. Eres única, especial, irreemplazable. Eres mi refugio, mi alegría, mi inspiración. Y no
+                    importa lo que pase, siempre voy a estar aquí para ti, acompañándote, cuidándote y amándote con todo
+                    lo que soy.</p>
+
+                <p>Hoy celebro tu vida, pero también celebro el privilegio de amarte. Deseo que cada uno de tus sueños
+                    se cumpla, que la felicidad te abrace siempre y que nunca te falten motivos para sonreír. Porque te
+                    lo mereces todo, absolutamente todo lo bonito de este mundo.</p>
+
+                <p>Gracias por existir, por ser tú, por amarme y dejarme amarte. No sabes cuánto significas para mí, mi
+                    amor. Eres lo mejor que me ha pasado.</p>
+
+                <p>Feliz cumpleaños, mi niña hermosa. Te amo con todo mi corazón, hoy y siempre. 💕</p>
+            </section>
+
+            <footer class="letter-footer">
+                <p class="signature">Con todo mi amor,</p>
+                <div class="divider"></div>
+                <p class="footer-note">Tu persona que te ama más de lo que las palabras pueden expresar.</p>
+            </footer>
+        </main>
+    </div>
+
+    <canvas id="confetti-canvas"></canvas>
+    <script src="index.js"></script>
+</body>
+
+</html>
